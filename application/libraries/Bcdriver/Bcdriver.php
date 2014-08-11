@@ -60,7 +60,8 @@ class Bcdriver extends CI_Driver_Library {
 	
 	
 	function getProjectById($id) {
-		return new BasecampProject($this, $id);
+		//todo
+		return null;
 	}
 	
 	
@@ -114,12 +115,12 @@ class Bcdriver extends CI_Driver_Library {
 	
 	
 	function getCurrentPerson() {
-		return new BasecampPerson($this, $this->call('me.xml'));
+		return $this->call('me.xml');
 	}
 	
 	
 	function getPersonById($id) {
-		return new BasecampPerson($this, $id);
+		return $this->bcperson->getPerson($id);
 	}
 	
 	
@@ -146,12 +147,13 @@ class Bcdriver extends CI_Driver_Library {
 	
 	
 	function getCompanyById($id) {
-		return new BasecampCompany($this, $id);
+		//todo
+		return null;
 	}
 	
 	
 	function getCategoryById($id) {
-		return new BasecampCategory($this, $id);
+		return $this->bccategory($id);
 	}
     
 }
